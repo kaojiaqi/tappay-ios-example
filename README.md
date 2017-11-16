@@ -129,14 +129,14 @@ applePay.showPaymentResult(paymentReault)
 13. Handle Payment Success Result.
 ```swift
 func tpdApplePay(_ applePay: TPDApplePay!, didSuccessPayment result: TPDTransactionResult!) {
-print("Apple Pay Did Success ==> Amount : \(result.amount.stringValue)")
+  print("Apple Pay Did Success ==> Amount : \(result.amount.stringValue)")
 
-print("shippingContact.name : \(applePay.consumer.shippingContact?.name?.givenName) \( applePay.consumer.shippingContact?.name?.familyName)")
-print("shippingContact.emailAddress : \(applePay.consumer.shippingContact?.emailAddress)")
-print("shippingContact.phoneNumber : \(applePay.consumer.shippingContact?.phoneNumber?.stringValue)")
+  print("shippingContact.name : \(applePay.consumer.shippingContact?.name?.givenName) \( applePay.consumer.shippingContact?.name?.familyName)")
+  print("shippingContact.emailAddress : \(applePay.consumer.shippingContact?.emailAddress)")
+  print("shippingContact.phoneNumber : \(applePay.consumer.shippingContact?.phoneNumber?.stringValue)")
 
-print("Shipping Method.identifier : \(applePay.cart.shippingMethod.identifier)")
-print("Shipping Method.detail : \(applePay.cart.shippingMethod.detail)")
+  print("Shipping Method.identifier : \(applePay.cart.shippingMethod.identifier)")
+  print("Shipping Method.detail : \(applePay.cart.shippingMethod.detail)")
 
 }
 ```
@@ -144,6 +144,6 @@ print("Shipping Method.detail : \(applePay.cart.shippingMethod.detail)")
 14. Handle Payment Failure Result.
 ```swift
 func tpdApplePay(_ applePay: TPDApplePay!, didFailurePayment result: TPDTransactionResult!) {
-print("Apple Pay Did Failure ==> Message : \(result.message), ErrorCode : \(result.status)")
+  print("Apple Pay Did Failure ==> Message : \(result.message), ErrorCode : \(result.status)")
 }
 ```

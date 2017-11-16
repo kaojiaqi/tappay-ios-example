@@ -11,12 +11,12 @@ TapPay iOS SDK is used to get token(i.e. prime) on iOS platform for charging a c
 ## Direct Pay
 1. Import TPDirect.framework and TPDirectResource into your project.
 2. Create a Bridging-Header.h file and Import TPDirect SDK
-```swift
+```objc
 #import <TPDirect/TPDirect.h>
 ```
 3. Use TPDSetup to set up your environment.
 
-``` swift
+```swift
 import AdSupport
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -59,7 +59,7 @@ self.tpdCard = TPDCard.setup(self.tpdForm)
 ```swift
 tpdCard.onSuccessCallback { (prime, cardInfo) in
 
-print("Prime : \(prime!), cardInfo : \ (cardInfo)")
+print("Prime : \(prime!), cardInfo : \(cardInfo)")
 
 }.onFailureCallback { (status, message) in
 
@@ -75,7 +75,7 @@ print("status : \(status) , Message : \(message)")
 1. Download and import TPDirect.framework into your project.
 
 2. Create a Bridging-Header.h file Import TPDirect SDK
-```swift
+```objc
 #import <TPDirect/TPDirect.h>
 ```
 3. Import PassKit.framework into your project.

@@ -20,11 +20,11 @@ TapPay iOS SDK is used to get token(i.e. prime) on iOS platform for charging a c
 import AdSupport
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-TPDSetup.setWithAppId(APP_ID, withAppKey: "APP_KEY", with: TPDServerType.ServerType)
+  TPDSetup.setWithAppId(APP_ID, withAppKey: "APP_KEY", with: TPDServerType.ServerType)
 
-TPDSetup.shareInstance().setupIDFA(ASIdentifierManager.shared().advertisingIdentifier.uuidString)
+  TPDSetup.shareInstance().setupIDFA(ASIdentifierManager.shared().advertisingIdentifier.uuidString)
 
-TPDSetup.shareInstance().serverSync()
+  TPDSetup.shareInstance().serverSync()
 }
 ```
 
@@ -42,11 +42,11 @@ tpdForm.setNormalColor(UIColor.black)
 
 ```swift
 tpdForm.onFormUpdated { (status) in
-if (status.isCanGetPrime()) {
-// Can make payment.
-}else{
-// Can't make payment.
-}
+  if (status.isCanGetPrime()) {
+    // Can make payment.
+  } else {
+    // Can't make payment.
+  }
 }
 ```
 
@@ -59,11 +59,11 @@ self.tpdCard = TPDCard.setup(self.tpdForm)
 ```swift
 tpdCard.onSuccessCallback { (prime, cardInfo) in
 
-print("Prime : \(prime!), cardInfo : \(cardInfo)")
+  print("Prime : \(prime!), cardInfo : \(cardInfo)")
 
 }.onFailureCallback { (status, message) in
 
-print("status : \(status) , Message : \(message)")
+  print("status : \(status) , Message : \(message)")
 
 }.getPrime()
 ```
@@ -88,11 +88,11 @@ import PassKit
 import AdSupport
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-TPDSetup.setWithAppId(APP_ID, withAppKey: "APP_KEY", with: TPDServerType.ServerType)
+  TPDSetup.setWithAppId(APP_ID, withAppKey: "APP_KEY", with: TPDServerType.ServerType)
 
-TPDSetup.shareInstance().setupIDFA(ASIdentifierManager.shared().advertisingIdentifier.uuidString)
+  TPDSetup.shareInstance().setupIDFA(ASIdentifierManager.shared().advertisingIdentifier.uuidString)
 
-TPDSetup.shareInstance().serverSync()
+  TPDSetup.shareInstance().serverSync()
 }
 ```
 6. Create TPDMerchant for Apple Pay Merchant Information.
@@ -115,14 +115,14 @@ applePay.startPayment()
 ```swift
 func tpdApplePay(_ applePay: TPDApplePay!, didReceivePrime prime: String!) {
 
-// 1. Send Your Prime To Your Server, And Handle Payment With Result
+  // 1. Send Your Prime To Your Server, And Handle Payment With Result
 
-print("Prime : \(prime!)");
+  print("Prime : \(prime!)");
 
-// 2. Handle Payment Result Success / Failure in Delegate.
-let paymentReault = true;
-applePay.showPaymentResult(paymentReault)
-}
+  // 2. Handle Payment Result Success / Failure in Delegate.
+  let paymentReault = true;
+  applePay.showPaymentResult(paymentReault)
+  }
 }
 ```
 
